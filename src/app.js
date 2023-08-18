@@ -5,6 +5,8 @@ import "./style.css";
 import "../src/assets/img/logorvs.png";
 import "./assets/img/4geeks.ico";
 
+setInterval(tarjetas(), 10000);
+
 function getRandomNumber() {
   const numbers = [
     "2",
@@ -46,11 +48,15 @@ function tarjetas() {
   imagen2.style.color = color;
 }
 
+const boton = document.querySelector(".boton");
+boton.addEventListener("click", function() {
+  tarjetas();
+});
+
 window.onload = function() {
   for (let i = 0; i < "Random Card RVS".length; i++) {
     setTimeout(() => {
       document.querySelector(".titulo").innerHTML += "Random Card RVS"[i];
     }, i * 100);
-    tarjetas();
   }
 };
